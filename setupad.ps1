@@ -8,8 +8,8 @@ $myScript = "c:\usersgrops.ps1"
 New-ItemProperty -Path 'HKLM:\Software\Microsoft\Windows\CurrentVersion\RunOnce' -Name "Run" -Value '%systemroot%\System32\WindowsPowerShell\v1.0\powershell.exe -executionpolicy bypass -file $myScript' -PropertyType ExpandString
 $daScript = @'
 $Secure_String_Pwd = ConvertTo-SecureString "Password1!" -AsPlainText -Force
-New-ADUser -Name "Hakan Hagenrud" -SamAccountName "hger" -Company "Purple Hat" -AccountPassword $Secure_String_Pwd -Enabled $true -ChangePasswordAtLogon $false
-New-ADUser -Name "Daniel Svensson" -SamAccountName "vsda" -Company "Furniture Heaven" -AccountPassword $Secure_String_Pwd -Enabled $true -ChangePasswordAtLogon $false
+New-ADUser -Name "Hakan Hagenrud" -SamAccountName "hger" -UserPrincipalName "hger@hger.org" -Company "Purple Hat" -AccountPassword $Secure_String_Pwd -Enabled $true -ChangePasswordAtLogon $false
+New-ADUser -Name "Daniel Svensson" -SamAccountName "vsda" -UserPrincipalName "vsda@hger.org" -Company "Furniture Heaven" -AccountPassword $Secure_String_Pwd -Enabled $true -ChangePasswordAtLogon $false
 '@
 
 echo $daScript > $myScript
