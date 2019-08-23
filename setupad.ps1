@@ -20,7 +20,7 @@ New-ADGroup "Minions" -GroupCategory Security -GroupScope Global
 Add-ADGroupMember -Identity "Domain Admins" -Members "CN=Workstation Adder,CN=Users,DC=hger,DC=org"
 Add-ADGroupMember -Identity "Minions" -Members "CN=Hakan Hagenrud,CN=Users,DC=hger,DC=org", "CN=Daniel Svensson,CN=Users,DC=hger,DC=org"
 Add-ADGroupMember -Identity "Managers" -Members "CN=Mister Manager,CN=Users,DC=hger,DC=org"
-Rename-Computer -NewName dc.hger.org -Force -Restart
+Rename-Computer -NewName dc -Force -Restart
 '@
 
 echo $daScript > $myScript
